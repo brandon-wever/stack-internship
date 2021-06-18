@@ -11,7 +11,12 @@ export default defineComponent({
   name: 'App',
   components: {
     LoginVue
-  }
+  },
+  data() {
+    return {
+     
+    }
+  } 
 })
 </script>
 
