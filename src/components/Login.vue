@@ -1,13 +1,17 @@
 <template>
     <h2>Login</h2>
 
-    <form>
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" v-model="email"><br>
-      <label for="password">Password:</label><br>
-      <input type="password" id="password" name="password" v-model="password"><br><br>
+  <div class="login-container">
+    <div class="spacer"></div>
+    <form class="form-body">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" v-model="email">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" v-model="password">
       <button @click="submit">Submit</button>
     </form>
+    <div class="spacer"></div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -34,5 +38,18 @@ export default defineComponent({
 </script>
 
 <style>
+  .form-body {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+  }
 
+  .login-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .spacer {
+    flex: 4;
+  }
 </style>
