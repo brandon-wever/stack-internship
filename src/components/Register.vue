@@ -7,6 +7,7 @@
     <div class="form-body">
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" v-model="email">
+      <!-- TODO: Show nice red error message below input when field is invalid after submitting -->
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" v-model="password">
       <label for="retypePassword">Retype Password:</label>
@@ -35,7 +36,27 @@ export default defineComponent({
     }
   },
   methods: {
+    isInputNotEmpty(input: string, label: string) {
+        if (input.length === 0) {
+            alert(`Please enter an ${label}`);
+            return false;
+        }
+
+        return true;
+    },
     submit() {
+        if (this.isInputNotEmpty(this.email, 'email')) {
+            return;
+        }
+        if (this.isInputNotEmpty(this.password, 'password')) {
+            return;
+        }
+        if (this.isInputNotEmpty(this.retypePassword, 'retype password')) {
+            return;
+        }
+
+        // TODO: Verify password and retype password are the same
+
         alert(`Email: ${this.email}, Password: ${this.password}, Password: ${this.retypePassword}`);
     } 
   }
