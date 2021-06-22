@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="../assets/logo.png" />
-  <h2>Login</h2>
+  <h2>Register</h2>
 
   <div class="login-container">
     <div class="spacer"></div>
@@ -9,8 +9,10 @@
       <input type="email" id="email" name="email" v-model="email">
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" v-model="password">
+      <label for="retypePassword">Retype Password:</label>
+      <input type="password" id="retypePassword" name="retypePassword" v-model="retypePassword">
       <button @click="submit">Submit</button>
-      <router-link to="/register">Don't have account? Register here!</router-link>
+      <router-link to="/">Go to back if you already have account</router-link>
     </div>
     <div class="spacer"></div>
   </div>
@@ -21,19 +23,20 @@ import { defineComponent } from 'vue'
 
 
 export default defineComponent({
-  name: 'Login',
+  name: 'Register',
   components: {
 
   },
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      retypePassword: ""
     }
   },
   methods: {
     submit() {
-        alert(`Email: ${this.email}, Password: ${this.password}`);
+        alert(`Email: ${this.email}, Password: ${this.password}, Password: ${this.retypePassword}`);
     } 
   }
 })

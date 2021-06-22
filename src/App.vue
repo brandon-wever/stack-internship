@@ -1,6 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <LoginVue />
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
